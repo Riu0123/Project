@@ -19,6 +19,24 @@ int main()
         scanf("%d",&Prior[i]);
         Process_no[i]=i+1;
     }
+  for(i=0;i<Number_of_Process;i++)
+    {
+        flag=i;
+        for(j=i+1;j<Number_of_Process;j++)
+        {
+            if(Prior[j]<Prior[flag])
+            flag=j;
+        }
+        temp=Prior[i];
+        Prior[i]=Prior[flag];
+        Prior[flag]=temp;
+        temp=B_T[i];
+        B_T[i]=B_T[flag];
+        B_T[flag]=temp;
+        temp=Process_no[i];
+        Process_no[i]=Process_no[flag];
+        Process_no[flag]=temp;
+    }
  
   
  
