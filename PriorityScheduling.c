@@ -2,27 +2,26 @@
 #include<conio.h>
 int main()
 {
- int B_T[10],Process_no[10],W_T[10],T_A_T[10];
- int A_T[10],Prior[10],i,j,Number_of_Process,tot=0,flag,temp,Avg_W_T,Avg_T_A_T;
- {
-  printf("Enter Number of Process:");
-  scanf("%d",&Number_of_Process);
-  printf("\nEnter Burst Time and Prior\n");
-  for(i=0;i<Number_of_Process;i++)
+ int BurstTime[10],ProcessNo[10],WaitTime[10],TurnAroundTime[10];
+ int ArrivalTime[10],Prior[10],i,j,NumberofProcess,total=0,flag,temp,AvgWaitTime,AvgTurnAroundTime;
+  printf("Enter the Number of Process you want to calculate:");
+  scanf("%d",&NumberofProcess);
+  printf("\n Enter Burst Time and Prior\n");
+  for(i=0;i<NumberofProcess;i++)
     {
-        printf("\nP[%d]\n",(i+1));
+        printf("\n P[%d]\n",(i+1));
         printf("Enter Burst Time:");
-        scanf("%d",&B_T[i]);
+        scanf("%d",&BurstTime[i]);
         printf("Enter Arrival Time:");
-        scanf("%d",&A_T[i]);
+        scanf("%d",&ArrivalTime[i]);
         printf("Enter Prior:");
         scanf("%d",&Prior[i]);
-        Process_no[i]=i+1;
+        ProcessNo[i]=i+1;
     }
-  for(i=0;i<Number_of_Process;i++)
+  for(i=0;i<NumberofProcess;i++)
     {
         flag=i;
-        for(j=i+1;j<Number_of_Process;j++)
+        for(j=i+1;j<NumberofProcess;j++)
         {
             if(Prior[j]<Prior[flag])
             flag=j;
@@ -30,12 +29,12 @@ int main()
         temp=Prior[i];
         Prior[i]=Prior[flag];
         Prior[flag]=temp;
-        temp=B_T[i];
-        B_T[i]=B_T[flag];
-        B_T[flag]=temp;
-        temp=Process_no[i];
-        Process_no[i]=Process_no[flag];
-        Process_no[flag]=temp;
+        temp=BurstTime[i];
+        BurstTime[i]=BurstTime[flag];
+        BurstTime[flag]=temp;
+        temp=ProcessNo[i];
+        ProcessNo[i]=ProcessNo[flag];
+        ProcessNo[flag]=temp;
     }
  
   
