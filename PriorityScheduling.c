@@ -44,6 +44,16 @@ int main()
   WaitTime[i]+=BurstTime[j];
   total+=WaitTime[i];
  }
- 
+AvgWaitTime=(total/NumberofProcess);
+total=0;
+printf("_______________________________________________________________");
+printf("\n Process \t Burst-Time Wait-Time Turn-Around-Time");
+for(i=0;i<NumberofProcess;i++)
+{
+TurnAroundTime[i]=BurstTime[i]+WaitTime[i];
+total+=TurnAroundTime[i];
+printf("\n Process %d \t %d\t \t %d\t\t%d", ProcessNo[i], BurstTime[i], WaitTime[i],
+TurnAroundTime[i]);
+}
   
  
