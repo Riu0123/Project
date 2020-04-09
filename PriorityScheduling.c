@@ -36,6 +36,14 @@ int main()
         ProcessNo[i]=ProcessNo[flag];
         ProcessNo[flag]=temp;
     }
+ WaitTime[0]=0;
+ for(i=1;i<NumberofProcess;i++)
+ {
+  WaitTime[i]=0;
+  for(j=0;j<i;j++)
+  WaitTime[i]+=BurstTime[j];
+  total+=WaitTime[i];
+ }
  
   
  
