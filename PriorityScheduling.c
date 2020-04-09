@@ -55,5 +55,12 @@ total+=TurnAroundTime[i];
 printf("\n Process %d \t %d\t \t %d\t\t%d", ProcessNo[i], BurstTime[i], WaitTime[i],
 TurnAroundTime[i]);
 }
+printf("\n_______________________________________________________________");
+AvgTurnAroundTime=(total/NumberofProcess);
+printf("\n\n Average Wait-Time = %d",AvgWaitTime);
+printf("\n Average Turn-Around-Time= %d",AvgTurnAroundTime);
+return 0;
+}
+ 
   
  
